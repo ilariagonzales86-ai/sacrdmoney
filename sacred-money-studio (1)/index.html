@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sacred Money Studio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#8b5cf6",
+                        "background-light": "#f3f4f6",
+                        "background-dark": "#050508",
+                        "sacred-obsidian": "#0a0a0f",
+                        "sacred-violet": "#8b5cf6",
+                        "sacred-silver": "#e2e8f0",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'cosmic-gradient': 'radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.15) 0%, rgba(5, 5, 8, 0) 50%)',
+                        'glass-gradient': 'linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%)',
+                        'button-shine': 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'spin-slow': 'spin 8s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #050508;
+            color: #f3f4f6;
+        }
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .glass-panel-heavy {
+             backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        .input-glow:focus {
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+            border-color: rgba(139, 92, 246, 0.6);
+        }
+        .btn-glow {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .btn-glow::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        .btn-glow:hover::after {
+            left: 100%;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
+        }
+        .bg-particles {
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDF5Z2AFCStwIWF5ZLeHtYOiqtHvB5SDgIZGVcoQGefYiDOC6puGcgeXdACh7etO49VWN98vp9eudEPALhFVBh41elDok6p9hJYBavxrMhrnn0r5xF77zMQnTh-fiM1lyd3poIR_6Z-5UOPGdBCzdFHlw5jBssqCCJaRLBXmsy54Ht6zhdVElKy6_Kj_7C26W4ANS_FLI7YVI8QV0ibc-igvrGOd1Bpm3aEU6aq5W6kTpIwMD4-G9THegraWtAnUcowLTnjKTt06a18);
+            background-size: cover;
+            background-position: center;
+        }
+        .overlay-gradient {
+            background: linear-gradient(to bottom, rgba(5, 5, 8, 0.7), rgba(5, 5, 8, 0.95));
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0f; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-background-dark text-gray-100 h-screen overflow-hidden selection:bg-sacred-violet selection:text-white">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

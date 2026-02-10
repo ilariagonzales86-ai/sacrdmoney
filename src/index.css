@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+    --obsidian: #050508;
+    --sacred-violet: #8b5cf6;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #050508;
+    color: #f3f4f6;
+}
+
+.glass-panel {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-panel-heavy {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.input-glow:focus {
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+    border-color: rgba(139, 92, 246, 0.6);
+}
+
+.btn-glow {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-glow::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn-glow:hover::after {
+    left: 100%;
+}
+
+.btn-glow:hover {
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
+}
+
+.bg-particles {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDF5Z2AFCStwIWF5ZLeHtYOiqtHvB5SDgIZGVcoQGefYiDOC6puGcgeXdACh7etO49VWN98vp9eudEPALhFVBh41elDok6p9hJYBavxrMhrnn0r5xF77zMQnTh-fiM1lyd3poIR_6Z-5UOPGdBCzdFHlw5jBssqCCJaRLBXmsy54Ht6zhdVElKy6_Kj_7C26W4ANS_FLI7YVI8QV0ibc-igvrGOd1Bpm3aEU6aq5W6kTpIwMD4-G9THegraWtAnUcowLTnjKTt06a18);
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay-gradient {
+    background: linear-gradient(to bottom, rgba(5, 5, 8, 0.7), rgba(5, 5, 8, 0.95));
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
