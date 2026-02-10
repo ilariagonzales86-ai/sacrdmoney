@@ -145,7 +145,7 @@ const Report: React.FC = () => {
                 onClick={() => navigate('/')}
                 className="text-[10px] text-gray-600 cursor-pointer hover:text-white transition-colors uppercase tracking-wider mb-8 flex items-center gap-1"
             >
-                <span className="material-icons text-[12px]">arrow_back</span> Ritorna all'archivio
+                <span className="material-icons text-[12px]">arrow_back</span> Ritorna alla Dashboard
             </div>
 
         </div>
