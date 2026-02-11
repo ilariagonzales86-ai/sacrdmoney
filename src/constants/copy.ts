@@ -160,7 +160,7 @@ export const APP_COPY = {
             },
             {
                 title: "Portale dell'Architettura",
-                desc: "Conferma che la struttura energetica possa espandersi all'infinito senza collassare.",
+                desc: "Conferma che la struttura energetica possa espandersi all'infinito senza collassare. Puoi eseguire questa attività senza sforzo eccessivo o attrito mentale?",
                 status: "PRONTO PER ATTIVAZIONE"
             },
             {
