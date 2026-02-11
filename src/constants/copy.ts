@@ -165,7 +165,7 @@ export const APP_COPY = {
             },
             {
                 title: "Portale della Sovranità",
-                desc: "Certifica la tua firma dimensionale sull'asset. Nessuno può replicare la tua essenza.",
+                desc: "Certifica la tua firma dimensionale sull'asset. Nessuno può replicare la tua essenza. Hai una prova tangibile (risultati, testimonianze, casi studio) per averlo già fatto?",
                 status: "IN STANDBY"
             }
         ],
