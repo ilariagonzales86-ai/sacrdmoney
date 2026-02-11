@@ -155,7 +155,7 @@ export const APP_COPY = {
         gates: [
             {
                 title: "Portale della Risonanza",
-                desc: "Verifica che la tua frequenza sia unica nel campo collettivo del mercato.",
+                desc: "Verifica che la tua frequenza sia unica nel campo collettivo del mercato. Le persone ti hanno già chiesto di fare questa cosa senza che tu la offrissi?",
                 status: "IN ATTESA"
             },
             {
