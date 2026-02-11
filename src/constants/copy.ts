@@ -1,8 +1,8 @@
 export const APP_COPY = {
     navbar: {
         brand: {
-            first: "Sacred",
-            second: "Money Studio"
+            first: "Quantum",
+            second: "Spark"
         },
         phases: {
             p1: "FASE 1 DI 5",
