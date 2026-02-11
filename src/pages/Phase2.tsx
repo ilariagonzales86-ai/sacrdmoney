@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import { useAppStore } from '../store/useAppStore';
 import { generateMarketTitles } from '../services/supabase';
+import { APP_COPY } from '../constants/copy';
 
 const Phase2: React.FC = () => {
     const navigate = useNavigate();
@@ -15,7 +16,7 @@ const Phase2: React.FC = () => {
 
     const handleNext = async () => {
         if (!quadrants.craft || quadrants.craft.length === 0) {
-            alert("Nessun elemento nel quadrante Craft. Torna alla Fase 1.");
+            alert(APP_COPY.phase2.emptyInfo);
             return;
         }
 
@@ -47,37 +48,37 @@ const Phase2: React.FC = () => {
     const quadrantsConfig = [
         {
             id: 'ritual',
-            title: 'RITUALE',
-            position: 'QUADRANTE NORD-OVEST',
+            title: APP_COPY.phase2.quadrants.ritual.title,
+            position: APP_COPY.phase2.quadrants.ritual.position,
             icon: 'temple_buddhist',
-            desc: 'Le abitudini quotidiane che ancorano la tua presenza.',
+            desc: APP_COPY.phase2.quadrants.ritual.desc,
             items: quadrants.ritual || [],
             metaIcon: 'playlist_add_check'
         },
         {
             id: 'sandbox',
-            title: 'SANDBOX',
-            position: 'QUADRANTE NORD-EST',
+            title: APP_COPY.phase2.quadrants.sandbox.title,
+            position: APP_COPY.phase2.quadrants.sandbox.position,
             icon: 'explore',
-            desc: 'Lo spazio della sperimentazione pura e del gioco creativo.',
+            desc: APP_COPY.phase2.quadrants.sandbox.desc,
             items: quadrants.sandbox || [],
             metaIcon: 'add_circle_outline'
         },
         {
             id: 'mischief',
-            title: 'MISCHIEF',
-            position: 'QUADRANTE SUD-OVEST',
+            title: APP_COPY.phase2.quadrants.mischief.title,
+            position: APP_COPY.phase2.quadrants.mischief.position,
             icon: 'auto_awesome',
-            desc: 'L\'audacia creativa e la rottura degli schemi.',
+            desc: APP_COPY.phase2.quadrants.mischief.desc,
             items: quadrants.mischief || [],
             metaIcon: 'bolt'
         },
         {
             id: 'craft',
-            title: 'CRAFT',
-            position: 'QUADRANTE SUB-EST • FOCUS ATTIVO',
+            title: APP_COPY.phase2.quadrants.craft.title,
+            position: APP_COPY.phase2.quadrants.craft.position,
             icon: 'diamond',
-            desc: 'L\'esecuzione magistrale della tua Opera.',
+            desc: APP_COPY.phase2.quadrants.craft.desc,
             items: quadrants.craft || [],
             metaIcon: 'priority_high',
             active: true
@@ -90,11 +91,10 @@ const Phase2: React.FC = () => {
 
                 <div className="text-center space-y-3">
                     <h1 className="text-4xl md:text-5xl font-display font-bold text-white drop-shadow-xl">
-                        Fase 2: Strutturazione <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-300">dell'Opera</span>
+                        {APP_COPY.phase2.title.fase} <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-300">{APP_COPY.phase2.title.highlight}</span>
                     </h1>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto font-light">
-                        Mappa la tua visione nei quattro quadranti fondamentali. <br />
-                        Incarna l'intento e dai forma al tuo flusso di sovranità.
+                        {APP_COPY.phase2.description}
                     </p>
                 </div>
 
@@ -122,13 +122,13 @@ const Phase2: React.FC = () => {
                                         </li>
                                     ))
                                 ) : (
-                                    <li className="text-gray-600 italic text-sm">Nessun elemento rilevato...</li>
+                                    <li className="text-gray-600 italic text-sm">{APP_COPY.phase2.emptyInfo}</li>
                                 )}
                             </ul>
 
                             <div className="pt-4 border-t border-white/5 flex items-center text-xs text-gray-500 group-hover:text-gray-300 transition-colors">
                                 <span className="material-icons text-sm mr-2">{q.metaIcon}</span>
-                                {q.items.length} Elementi
+                                {q.items.length} {APP_COPY.phase2.elementsCount}
                             </div>
 
                             {/* Hover effect light sweep */}
@@ -145,10 +145,10 @@ const Phase2: React.FC = () => {
                             icon={isProcessing ? "hourglass_empty" : "filter_vintage"}
                             className="rounded-full py-4"
                         >
-                            {isProcessing ? "Generazione Titoli..." : "Continua Verso La Cristallizzazione"}
+                            {isProcessing ? APP_COPY.phase2.button.processing : APP_COPY.phase2.button.idle}
                         </Button>
                         <p className="text-center mt-4 text-[10px] text-gray-600 font-mono tracking-widest">
-                            PREMI CTRL + INVIO PER PROCEDERE
+                            {APP_COPY.phase2.shortcut}
                         </p>
                     </div>
                 </div>

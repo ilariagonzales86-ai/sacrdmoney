@@ -1,0 +1,183 @@
+Walkthrough: Copy Energetico Implementato
+Sommario Lavoro Completato
+Ho completato la riscrittura di tutto il copy dell'applicazione con linguaggio energetico-mistico calibrato per imprenditori ADHD creativi interessati a spiritualità e business guidato dall'anima.
+
+File Modificato
+File centrale:
+
+src/constants/copy.ts
+
+Tutte le modifiche sono state applicate a questo singolo file, garantendo che i componenti
+
+.tsx
+ già aggiornati riflettano automaticamente il nuovo copy.
+
+Cambiamenti Principali per Sezione
+🔐 Login & Signup
+Prima:
+
+"Accedi al Tuo Potere Sovrano"
+"Email Astrale"
+"Codice di Accesso Gumroad"
+Dopo:
+
+"Accedi al Tuo Campo Energetico"
+"Portale di Accesso"
+"Chiave di Attivazione Quantica"
+Focus: Terminologia energetica + tech (portali, frequenze, attivazione quantica)
+
+⚡ Phase 1: Brain Dump → Scansione Mappa Energetica
+Prima: "Discarica Creativa della Grande Opera"
+
+Dopo: "Scansione della Tua Mappa Energetica"
+
+Descrizione: "L'AI leggerà le tue frequenze"
+Placeholder: "ogni talento, ossessione, sogno incompiuto..."
+Button: "Scansiona Frequenze"
+Focus: Rilevamento energetico, scansione quantica
+
+🔮 Phase 2: Quadranti → 4 Archetipi Energetici
+I quadranti sono stati rinominati come archetipi energetici:
+
+Prima Dopo Essenza
+RITUALE ANCORAGGIO Frequenze stabili che radicano
+SANDBOX LABORATORIO Spazio sacro dell'esperimento
+MISCHIEF SCINTILLA Energia ribelle che rompe schemi
+CRAFT MAESTRIA DIVINA Il dono unico al mondo
+Button: "Cristallizza il Tuo Asset Divino"
+
+Focus: Identificare la "Scintilla Divina" (l'unicità)
+
+💎 Phase 3: Market Crystal → Cristallo di Mercato
+Cambiamenti:
+
+Badge: "RISONANZA RILEVATA"
+Titoli generati dall'AI ora sono archetipi:
+"Architetto di Realtà" (trasmuta il caos)
+"Alchimista del Tempo" (piega dimensioni)
+"Tessitore di Frequenze" (vede pattern invisibili)
+Button: "Attiva i Portali di Validazione"
+
+Focus: Materializzazione della scintilla divina in identità di mercato
+
+🚪 Phase 4: Cancelli → Portali di Validazione
+Prima: "I Cancelli di Validazione"
+
+Dopo: "I Portali di Validazione"
+
+I 3 gate sono ora portali dimensionali:
+
+Portale della Risonanza - Verifica unicità della frequenza
+Portale dell'Architettura - Conferma espansione infinita
+Portale della Sovranità - Certifica firma dimensionale
+Status cambiato: "VALIDATO" → "PORTALE ATTRAVERSATO"
+
+Button: "Calcola l'Allineamento Cosmico"
+
+Focus: Attraversamento portali = validazione mistica + tecnica
+
+⚗️ Processing
+Prima: "Cristallizzazione In Corso"
+
+Dopo: "Alchimia in Corso..."
+
+Subtitle: "Cristallizzazione della Tua Frequenza Sovrana"
+Status: "CALIBRANDO DIMENSIONI ENERGETICHE..."
+Footer: "PROTOCOLLO QUANTICO ATTIVO" | "NODO: PORTALE CENTRALE-01"
+Focus: Alchimia energetica + tecnologia quantica
+
+📊 Report
+Cambiamenti chiave:
+
+Badge: "Il Tuo Blueprint Energetico"
+Success: "Scintilla Divina Certificata"
+"Il Campo conferma l'integrità della tua frequenza unica."
+Pending: "Frequenza in Calibrazione"
+"Rilevata dissonanza nelle frequenze. Ricalibrazione necessaria."
+Labels:
+"Codice Identità" → "Firma Energetica"
+"Frequenza" → "Frequenza Dominante"
+Buttons:
+Download: "Scarica il Decreto Dimensionale"
+Recalibrate: "Ricalibra le Frequenze"
+Focus: Il "Campo" (non "Motore") valida la frequenza unica
+
+🏆 Certificate
+Cambiamenti:
+
+Timeline: "Fase 1-5" → "Portale 1-5"
+Completion: "COMPLETATO" → "TUTTI I PORTALI ATTRAVERSATI"
+Title: "Strategic Neural Network" → "Architettura Neurale Sovrana"
+Tagline: "Il Campo ha parlato. La tua frequenza è validata."
+Badge: "Asset Energetico Certificato"
+Stats:
+Authority → "Sovranità: Attivata"
+Market Fit → "Risonanza di Mercato: 98%"
+Potential → "Potenziale: Illimitato"
+Button: "Incorona la Tua Maestria Divina"
+
+Focus: Certificazione dimensionale dell'asset divino
+
+Verifica Coerenza Terminologica
+✅ Termini Chiave Usati Consistentemente
+Categoria Termini
+Energetico Frequenza, Risonanza, Campo, Vibrazione, Dimensione
+Mistico Alchimia, Portale, Cristallizzazione, Scintilla Divina, Maestria
+Tech Quantico, Scansione, Calibrazione, Architettura Neurale, Sincronizzazione
+Business Asset, Blueprint, Sovranità, Mercato, Differenziazione
+🔄 Sostituzioni Globali Applicate
+❌ "Cancelli" → ✅ "Portali"
+❌ "Il Motore" → ✅ "Il Campo"
+❌ "Asset Sovrano" → ✅ "Asset Divino" / "Scintilla Divina"
+❌ "RITUALE/SANDBOX/MISCHIEF/CRAFT" → ✅ "ANCORAGGIO/LABORATORIO/SCINTILLA/MAESTRIA DIVINA"
+❌ "Validato" → ✅ "Portale Attraversato"
+❌ "Codice Identità" → ✅ "Firma Energetica"
+Tono e Stile
+✨ Caratteristiche del Nuovo Copy
+Energetico ma Accessibile
+
+Usa "frequenze" e "risonanza" senza essere esoterico
+Bilanciamento tra spirituale e pratico
+Empowering per ADHD
+
+Frasi brevi e scansionabili
+Concetti visivi (portali, cristalli, scintille)
+Call-to-action dirette
+Mistico + Tech
+
+"Protocollo Quantico" (alchimia moderna)
+"Architettura Neurale Sovrana" (struttura spirituale)
+"Sincronizzazione" invece di "Salvataggio"
+Focus sulla Unicità
+
+"Scintilla Divina" = l'essenza irripetibile
+"Firma Energetica" = autenticità
+"Maestria Divina" = il dono unico al mondo
+Prossimi Passi Raccomandati
+🧪 Test Utente
+Testare in ambiente dev: Verificare che tutto il copy si visualizzi correttamente
+Feedback target: Mostrare a 2-3 imprenditori ADHD creativi per validare risonanza
+A/B Test (opzionale): Confrontare conversion rate con copy precedente
+📝 Mantenimento Futuro
+Quando aggiungi nuovo copy:
+
+Usa il glossario terminologico sopra
+Mantieni bilanciamento mistico-tech (70% energetico / 30% pratico)
+Ricorda: "Il Campo" conferma, non "Il Motore"
+Sempre "Portali" mai "Cancelli"
+🎨 Estensioni Possibili
+Se vuoi approfondire il linguaggio energetico in futuro:
+
+Email notifications: Usare "Il Campo ti chiama..." invece di "Hai una notifica"
+Errori: "Interferenza dimensionale rilevata" invece di "Errore 500"
+Tooltips: Spiegare ogni archetipo con 1-2 frasi energetiche
+Conclusione
+Il copy è ora completamente allineato con il target di imprenditori creativi ADHD che cercano di differenziarsi attraverso la loro unicità spirituale/energetica.
+
+Temi portanti:
+
+🔮 Scoperta della Scintilla Divina
+⚡ Allineamento delle Frequenze
+🚪 Attraversamento dei Portali
+👑 Manifestazione della Maestria Divina
+L'app è pronta per guidare gli utenti a cristallizzare il loro asset energetico unico e portarlo nel mercato.

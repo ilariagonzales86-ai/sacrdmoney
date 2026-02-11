@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import { useAppStore } from '../store/useAppStore';
+import { APP_COPY } from '../constants/copy';
 
 const Phase3: React.FC = () => {
     const navigate = useNavigate();
@@ -9,11 +10,7 @@ const Phase3: React.FC = () => {
     const [localSelected, setLocalSelected] = useState<number | null>(null);
 
     // Se non ci sono titoli, usa dei placeholder (o reindirizza)
-    const displayTitles = marketTitles.length > 0 ? marketTitles : [
-        "ARCHITETTO DELL'ETERE",
-        "MAESTRO DELLA RISONANZA",
-        "STRATEGA SOVRANO"
-    ];
+    const displayTitles = marketTitles.length > 0 ? marketTitles : APP_COPY.phase3.defaultTitles;
 
     const handleSelect = (index: number) => {
         setLocalSelected(index);
@@ -28,15 +25,14 @@ const Phase3: React.FC = () => {
 
     // Genera statistiche deterministiche o semi-casuali per dare "sapore" alle card
     const getStats = (index: number) => {
-        if (index === 0) return [{ label: 'SISTEMI', val: 98 }, { label: 'VISION', val: 85 }];
-        if (index === 1) return [{ label: 'VELOCITÀ', val: 95 }, { label: 'IMPATTO', val: 88 }];
-        return [{ label: 'STRATEGIA', val: 92 }, { label: 'RISCHIO', val: 45 }];
+        const { statsLabels } = APP_COPY.phase3;
+        if (index === 0) return [{ label: statsLabels.systems, val: 98 }, { label: statsLabels.vision, val: 85 }];
+        if (index === 1) return [{ label: statsLabels.speed, val: 95 }, { label: statsLabels.impact, val: 88 }];
+        return [{ label: statsLabels.strategy, val: 92 }, { label: statsLabels.risk, val: 45 }];
     };
 
     const getDesc = (index: number) => {
-        if (index === 0) return "Costruisci la realtà attraverso sistemi. Trasmuti il caos in ordine strutturato.";
-        if (index === 1) return "Pieghi il tempo alla tua volontà. Operi fuori dai vincoli lineari.";
-        return "Domini i mercati caotici. Vedi i pattern che altri ignorano.";
+        return APP_COPY.phase3.defaultDescriptions[index] || APP_COPY.phase3.defaultDescriptions[0];
     };
 
     const getImg = (index: number) => {
@@ -56,13 +52,14 @@ const Phase3: React.FC = () => {
         <div className="w-full flex-grow flex flex-col items-center justify-start p-6 pt-10 md:p-12 relative overflow-y-auto">
             <div className="absolute top-20 text-center space-y-2 z-20">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-[10px] text-purple-200 tracking-wider mb-2">
-                    <span className="material-icons text-[12px]">auto_awesome</span> RESONANCE DETECTED
+                    <span className="material-icons text-[12px]">auto_awesome</span> {APP_COPY.phase3.badge}
                 </div>
                 <h1 className="text-4xl md:text-5xl font-display font-bold text-white drop-shadow-xl uppercase">
-                    Fase 3: Cristallo Di <br /> Mercato
+                    {APP_COPY.phase3.title.main} <br />
+                    {APP_COPY.phase3.title.highlight}
                 </h1>
                 <p className="text-gray-400 text-sm max-w-lg mx-auto font-light">
-                    Il tuo Asset Sovrano si sta cristallizzando. Scegli la risonanza che meglio definisce il tuo ingresso nel mercato.
+                    {APP_COPY.phase3.description}
                 </p>
             </div>
 
@@ -122,7 +119,7 @@ const Phase3: React.FC = () => {
                         className="shadow-2xl"
                         disabled={localSelected === null}
                     >
-                        Inizia i cancelli di validazione
+                        {APP_COPY.phase3.button}
                         <span className="material-icons ml-2 text-sm">chevron_right</span>
                     </Button>
                 </div>

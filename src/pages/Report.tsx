@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import Button from '../components/Button';
 import { useAppStore } from '../store/useAppStore';
+import { APP_COPY } from '../constants/copy';
 
 const Report: React.FC = () => {
     const navigate = useNavigate();
@@ -20,7 +21,7 @@ const Report: React.FC = () => {
     // Se non c'è un titolo selezionato, torna indietro (o usa default)
     const currentTitle = selectedTitle !== null && marketTitles[selectedTitle]
         ? marketTitles[selectedTitle]
-        : "ARCHITETTO DELL'ETERE";
+        : APP_COPY.phase3.defaultTitles[0];
 
     // Calcola i dati per il grafico Radar basati sulla lunghezza degli array nei quadranti
     // Normalizziamo a 150 come valore massimo
@@ -43,7 +44,7 @@ const Report: React.FC = () => {
         <div className="w-full flex-grow flex flex-col items-center justify-start p-6 pt-8 md:p-12 relative overflow-y-auto">
 
             <div className="text-center mb-10 z-10">
-                <p className="text-[10px] tracking-[0.3em] text-orange-300 uppercase mb-2">Rapporto Finale: La Tua Sovranità</p>
+                <p className="text-[10px] tracking-[0.3em] text-orange-300 uppercase mb-2">{APP_COPY.report.badge}</p>
                 <h1 className="text-4xl md:text-5xl font-serif italic text-orange-100 drop-shadow-xl">
                     {currentTitle}
                 </h1>
@@ -56,21 +57,21 @@ const Report: React.FC = () => {
                     <div className="glass-panel p-6 rounded-lg border-l-2 border-l-gray-500">
                         <div className="flex justify-between items-start mb-4">
                             <span className="text-[9px] uppercase tracking-widest text-gray-400">
-                                {isSuccess ? 'Asset Cristallizzato' : 'Asset In Attesa'}
+                                {isSuccess ? APP_COPY.report.outcome.success.status : APP_COPY.report.outcome.pending.status}
                             </span>
                             <span className="material-icons text-gray-600">diamond</span>
                         </div>
                         <p className="text-gray-300 font-serif italic text-lg leading-relaxed mb-6">
                             {isSuccess
-                                ? "\"Il Motore conferma l'integrità strutturale dell'opera. La via è libera per l'espansione.\""
-                                : "\"Rilevata dissonanza nei parametri vitali. È richiesta la ricalibrazione dell'intento.\""}
+                                ? APP_COPY.report.outcome.success.text
+                                : APP_COPY.report.outcome.pending.text}
                         </p>
                         <div className="flex justify-between text-[10px] text-gray-500 font-mono border-t border-white/5 pt-3">
-                            <span>Codice Identità</span>
+                            <span>{APP_COPY.report.labels.id}</span>
                             <span className="text-orange-300">ARC-{Math.floor(Math.random() * 1000)}-SNC</span>
                         </div>
                         <div className="flex justify-between text-[10px] text-gray-500 font-mono pt-1">
-                            <span>Frequenza</span>
+                            <span>{APP_COPY.report.labels.frequency}</span>
                             <span className="text-purple-300">963 Hz</span>
                         </div>
                     </div>
@@ -121,7 +122,7 @@ const Report: React.FC = () => {
                     </div>
 
                     <p className="text-center text-gray-500 text-xs mt-4 max-w-md mx-auto">
-                        Il tuo profilo bilancia l'ordine rituale con l'innovazione della Sandbox, creando una fondazione solida per la sovranità finanziaria.
+                        {APP_COPY.report.chartDesc}
                     </p>
                 </div>
             </div>
@@ -136,7 +137,7 @@ const Report: React.FC = () => {
                         {isSuccess ? 'history_edu' : 'build'}
                     </span>
                     <span className="text-gray-200 group-hover:text-white transition-colors uppercase tracking-widest font-bold text-sm">
-                        {isSuccess ? 'Scarica il Decreto' : 'Ricalibra Parametri'}
+                        {isSuccess ? APP_COPY.report.buttons.download : APP_COPY.report.buttons.recalibrate}
                     </span>
                 </button>
             </div>
@@ -145,7 +146,7 @@ const Report: React.FC = () => {
                 onClick={() => navigate('/')}
                 className="text-[10px] text-gray-600 cursor-pointer hover:text-white transition-colors uppercase tracking-wider mb-8 flex items-center gap-1"
             >
-                <span className="material-icons text-[12px]">arrow_back</span> Ritorna alla Dashboard
+                <span className="material-icons text-[12px]">arrow_back</span> {APP_COPY.report.backToDashboard}
             </div>
 
         </div>

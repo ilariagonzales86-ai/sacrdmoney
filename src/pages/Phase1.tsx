@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import { useAppStore } from '../store/useAppStore';
 import { analyzeQuadrants } from '../services/supabase';
+import { APP_COPY } from '../constants/copy';
 
 const Phase1: React.FC = () => {
     const navigate = useNavigate();
@@ -57,12 +58,11 @@ const Phase1: React.FC = () => {
 
                 <div className="text-center space-y-4">
                     <h1 className="text-4xl md:text-5xl font-display font-bold text-white drop-shadow-xl">
-                        Fase 1: <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-300">Discarica Creativa della</span><br />
-                        <span className="text-white">Grande Opera</span>
+                        {APP_COPY.phase1.title.fase} <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-300">{APP_COPY.phase1.title.highlight}</span><br />
+                        <span className="text-white">{APP_COPY.phase1.title.main}</span>
                     </h1>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto font-light">
-                        Svuota la mente. Elenca tutto ciò che fai, conosci o padroneggi.
-                        Fluisci senza filtri.
+                        {APP_COPY.phase1.description}
                     </p>
                 </div>
 
@@ -71,11 +71,11 @@ const Phase1: React.FC = () => {
                         <div className="w-3 h-3 rounded-full bg-white/20"></div>
                         <div className="w-3 h-3 rounded-full bg-white/20"></div>
                         <div className="w-3 h-3 rounded-full bg-white/20"></div>
-                        <div className="ml-auto text-[10px] text-gray-500 uppercase tracking-widest">Modalità Input Grezzo</div>
+                        <div className="ml-auto text-[10px] text-gray-500 uppercase tracking-widest">{APP_COPY.phase1.textarea.label}</div>
                     </div>
                     <textarea
                         className="w-full h-full bg-black/40 text-gray-300 p-6 pt-12 resize-none focus:outline-none font-mono text-sm leading-relaxed custom-scrollbar placeholder-gray-600/50"
-                        placeholder="Inizia a scrivere qui... lascia che il flusso di coscienza si riversi sul vetro..."
+                        placeholder={APP_COPY.phase1.textarea.placeholder}
                         value={brainDumpInput}
                         onChange={(e) => setBrainDumpInput(e.target.value)}
                         disabled={isProcessing}
@@ -83,8 +83,8 @@ const Phase1: React.FC = () => {
 
                     {/* Bottom Status Bar */}
                     <div className="absolute bottom-0 w-full h-8 bg-white/5 border-t border-white/5 flex items-center justify-between px-4 z-20 text-[10px] text-gray-500">
-                        <span className="flex items-center gap-2"><span className="material-icons text-[12px]">keyboard_return</span> Markdown supportato</span>
-                        <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div> Salvataggio auto</span>
+                        <span className="flex items-center gap-2"><span className="material-icons text-[12px]">keyboard_return</span> {APP_COPY.phase1.textarea.footer.markdown}</span>
+                        <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div> {APP_COPY.phase1.textarea.footer.autosave}</span>
                     </div>
 
                     {/* Glow Effects */}
@@ -99,10 +99,10 @@ const Phase1: React.FC = () => {
                             disabled={isProcessing}
                             icon={isProcessing ? "hourglass_empty" : "auto_fix_high"}
                         >
-                            {isProcessing ? "Cristallizzazione..." : "Cristallizza Analisi"}
+                            {isProcessing ? APP_COPY.phase1.button.processing : APP_COPY.phase1.button.idle}
                         </Button>
                         <p className="text-center mt-3 text-[10px] text-gray-600 font-mono tracking-widest">
-                            PREMI CTRL + INVIO PER PROCESSARE L'OPERA
+                            {APP_COPY.phase1.shortcut}
                         </p>
                     </div>
                 </div>

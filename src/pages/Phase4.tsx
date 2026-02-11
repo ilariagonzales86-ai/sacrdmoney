@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import { useAppStore } from '../store/useAppStore';
+import { APP_COPY } from '../constants/copy';
 
 const Phase4: React.FC = () => {
     const navigate = useNavigate();
@@ -27,23 +28,23 @@ const Phase4: React.FC = () => {
 
     const gateData = [
         {
-            title: "Risonanza Unica",
-            desc: "Valuta l'allineamento della frequenza del tuo asset rispetto alla base collettiva.",
+            title: APP_COPY.phase4.gates[0].title,
+            desc: APP_COPY.phase4.gates[0].desc,
             icon: "graphic_eq",
-            status: "IN ATTESA"
+            status: APP_COPY.phase4.gates[0].status
         },
         {
-            title: "Craft Scalabile",
-            desc: "Verifica l'integrità strutturale per un'espansione infinita. L'architettura deve reggere.",
+            title: APP_COPY.phase4.gates[1].title,
+            desc: APP_COPY.phase4.gates[1].desc,
             icon: "architecture",
-            status: "IN ATTESA DI INPUT",
+            status: APP_COPY.phase4.gates[1].status,
             center: true
         },
         {
-            title: "Autorità Sovrana",
-            desc: "Conferma la firma di proprietà. Stabilisci il dominio sull'asset.",
+            title: APP_COPY.phase4.gates[2].title,
+            desc: APP_COPY.phase4.gates[2].desc,
             icon: "verified_user",
-            status: "IN ATTESA"
+            status: APP_COPY.phase4.gates[2].status
         }
     ];
 
@@ -64,10 +65,10 @@ const Phase4: React.FC = () => {
 
                 <div className="text-center space-y-2 mt-8">
                     <h1 className="text-3xl md:text-5xl font-display font-bold text-gray-200 drop-shadow-xl uppercase tracking-tight">
-                        Fase 4: I Cancelli di <span className="text-white">Validazione</span>
+                        {APP_COPY.phase4.title.main} <span className="text-white">{APP_COPY.phase4.title.highlight}</span>
                     </h1>
                     <p className="text-gray-400 text-sm max-w-lg mx-auto font-light">
-                        Sottoponi il tuo Asset Sovrano alla prova. Solo il resiliente entra nel mercato.
+                        {APP_COPY.phase4.description}
                     </p>
                 </div>
 
@@ -102,7 +103,7 @@ const Phase4: React.FC = () => {
                                 <div className="w-full mt-6">
                                     <div className="flex justify-between text-[9px] text-gray-500 uppercase tracking-widest mb-2 px-1">
                                         <span>Status</span>
-                                        <span className={isActive ? 'text-green-400' : 'text-purple-400'}>{isActive ? 'VALIDATO' : gate.status}</span>
+                                        <span className={isActive ? 'text-green-400' : 'text-purple-400'}>{isActive ? APP_COPY.phase4.status.validated : gate.status}</span>
                                     </div>
                                     <button
                                         onClick={() => toggleGate(idx)}
@@ -115,7 +116,7 @@ const Phase4: React.FC = () => {
                                     >
                                         <span className="flex items-center justify-center gap-2">
                                             <span className="material-icons text-sm">{isActive ? 'lock' : 'play_circle'}</span>
-                                            {isActive ? 'Valida' : 'Valida'}
+                                            {APP_COPY.phase4.button.validate}
                                         </span>
                                     </button>
                                 </div>
@@ -131,10 +132,10 @@ const Phase4: React.FC = () => {
                         icon="diamond"
                         className="h-16 text-lg shadow-[0_0_40px_rgba(139,92,246,0.4)]"
                     >
-                        Calcola Risultato
+                        {APP_COPY.phase4.button.calculate}
                     </Button>
                     <p className="text-center mt-4 text-[10px] text-gray-600 font-mono tracking-widest uppercase">
-                        Completa tutte le validazioni per procedere
+                        {APP_COPY.phase4.shortcut}
                     </p>
                 </div>
 
@@ -142,9 +143,9 @@ const Phase4: React.FC = () => {
 
             {/* Footer Stats */}
             <div className="absolute bottom-4 left-0 w-full flex justify-between px-10 text-[9px] text-gray-500 font-mono">
-                <span className="flex items-center gap-2"><span className="material-icons text-[10px]">lock</span> ENCRYPTED: AES-256</span>
-                <span className="flex items-center gap-2"><span className="material-icons text-[10px]">dns</span> NODE: OBSIDIAN-ALPHA</span>
-                <span className="flex items-center gap-2"><span className="material-icons text-[10px]">timer</span> LATENCY: 12MS</span>
+                <span className="flex items-center gap-2"><span className="material-icons text-[10px]">lock</span> {APP_COPY.phase4.footer.encrypted}</span>
+                <span className="flex items-center gap-2"><span className="material-icons text-[10px]">dns</span> {APP_COPY.phase4.footer.node}</span>
+                <span className="flex items-center gap-2"><span className="material-icons text-[10px]">timer</span> {APP_COPY.phase4.footer.latency}</span>
             </div>
         </div>
     );

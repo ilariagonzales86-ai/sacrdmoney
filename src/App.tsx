@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { HashRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
 import Phase1 from './pages/Phase1';
 import Phase2 from './pages/Phase2';
@@ -9,6 +9,7 @@ import Processing from './pages/Processing';
 import Report from './pages/Report';
 import Certificate from './pages/Certificate';
 import Navbar from './components/Navbar';
+import { supabase } from './services/supabase';
 
 const Background = () => (
     <>
@@ -34,7 +35,7 @@ const ScrollToTop = () => {
 
 const Layout = ({ children }: { children?: React.ReactNode }) => {
     const location = useLocation();
-    const isLogin = location.pathname === '/';
+    const isLogin = location.pathname === '/login';
 
     return (
         <div className="relative w-full h-screen overflow-hidden flex flex-col">
@@ -49,18 +50,44 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
 };
 
 const App: React.FC = () => {
+    const [session, setSession] = useState<any>(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        // Controlla la sessione corrente
+        supabase.auth.getSession().then(({ data: { session } }) => {
+            setSession(session);
+            setLoading(false);
+        });
+
+        // Ascolta i cambiamenti di stato
+        const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+            setSession(session);
+        });
+
+        return () => subscription.unsubscribe();
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="w-full h-screen flex items-center justify-center bg-black">
+                <div className="text-white font-mono animate-pulse uppercase tracking-widest">Sincronizzazione...</div>
+            </div>
+        );
+    }
+
     return (
         <HashRouter>
             <Layout>
                 <Routes>
-                    <Route path="/" element={<Login />} />
-                    <Route path="/phase1" element={<Phase1 />} />
-                    <Route path="/phase2" element={<Phase2 />} />
-                    <Route path="/phase3" element={<Phase3 />} />
-                    <Route path="/phase4" element={<Phase4 />} />
-                    <Route path="/processing" element={<Processing />} />
-                    <Route path="/report" element={<Report />} />
-                    <Route path="/certificate" element={<Certificate />} />
+                    <Route path="/" element={session ? <Phase1 /> : <Navigate to="/login" />} />
+                    <Route path="/phase2" element={session ? <Phase2 /> : <Navigate to="/login" />} />
+                    <Route path="/phase3" element={session ? <Phase3 /> : <Navigate to="/login" />} />
+                    <Route path="/phase4" element={session ? <Phase4 /> : <Navigate to="/login" />} />
+                    <Route path="/processing" element={session ? <Processing /> : <Navigate to="/login" />} />
+                    <Route path="/report" element={session ? <Report /> : <Navigate to="/login" />} />
+                    <Route path="/certificate" element={session ? <Certificate /> : <Navigate to="/login" />} />
+                    <Route path="/login" element={!session ? <Login /> : <Navigate to="/" />} />
                 </Routes>
             </Layout>
         </HashRouter>
